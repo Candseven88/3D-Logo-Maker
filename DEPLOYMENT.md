@@ -1,103 +1,93 @@
-# 3D Designer - Vercel部署指南
+# 🚀 部署指南
 
-## 🚀 快速部署
+## 快速部署到 Vercel
 
-### 方法1：GitHub连接部署（推荐）
+### 1. 准备工作
+- GitHub 账户
+- Vercel 账户（可以用 GitHub 登录）
 
-1. **上传代码到GitHub**
+### 2. 部署步骤
+
+1. **推送到 GitHub**
    ```bash
    git add .
-   git commit -m "Ready for Vercel deployment"
-   git remote add origin https://github.com/yourusername/3d-designer.git
-   git push -u origin main
+   git commit -m "Ready for deployment"
+   git push origin main
    ```
 
-2. **连接Vercel**
+2. **连接 Vercel**
    - 访问 [vercel.com](https://vercel.com)
-   - 使用GitHub账号登录
-   - 点击 "New Project"
-   - 选择你的GitHub仓库
-   - 点击 "Deploy"
+   - 用 GitHub 账户登录
+   - 点击 "Import Project"
+   - 选择你的 GitHub 仓库
 
-### 方法2：Vercel CLI部署
+3. **配置项目**
+   - **Project Name**: `3d-designer` 
+   - **Framework**: Next.js（自动检测）
+   - **Build Command**: `npm run build`（默认）
+   - **Output Directory**: `.next`（默认）
 
-1. **安装Vercel CLI**
-   ```bash
-   npm i -g vercel
-   ```
+4. **部署**
+   - 点击 "Deploy" 按钮
+   - 等待构建完成（约 2-3 分钟）
 
-2. **登录并部署**
-   ```bash
-   vercel login
-   vercel --prod
-   ```
+### 3. 自定义域名（可选）
 
-## ⚙️ 部署配置
+1. 在 Vercel 项目设置中点击 "Domains"
+2. 添加你的域名（如：`3dlogo.site`）
+3. 按照提示配置 DNS 记录
 
-### 环境变量设置
-在Vercel Dashboard中设置以下环境变量：
+## 📊 Analytics 已预配置
+
+以下分析工具已经预先配置好，无需额外设置：
+
+- ✅ **Google Analytics**: `G-YWJWZFQ5N8`
+- ✅ **Microsoft Clarity**: `t6utovvl34`  
+- ✅ **Google Search Console**: 已验证
+- ✅ **Vercel Analytics**: 自动启用
+
+## 🔧 项目特性
+
+- **免环境变量**: 所有配置都已硬编码，无需设置环境变量
+- **自动构建**: 推送到 GitHub 后自动部署
+- **优化性能**: 已配置 Next.js 优化设置
+- **SEO 友好**: 预配置 sitemap 和 robots.txt
+- **免费账户友好**: 配置已优化，适合 Vercel 免费计划
+
+## 📁 重要文件说明
 
 ```
-NEXT_PUBLIC_APP_NAME=3D Designer
-NEXT_PUBLIC_APP_URL=https://your-domain.vercel.app
-NODE_ENV=production
+project/
+├── vercel.json          # Vercel 部署配置（免费计划优化）
+├── next.config.mjs      # Next.js 配置
+├── package.json         # 依赖管理
+└── components/analytics/ # 分析工具配置
 ```
 
-### 域名配置
-1. 在Vercel Dashboard中进入项目设置
-2. 点击 "Domains" 选项卡
-3. 添加自定义域名：`3dlogo.site`
-4. 按照提示配置DNS记录
+## 🐛 常见问题
 
-## 🔧 性能优化
+### Q: 部署失败怎么办？
+A: 检查 Vercel 构建日志，确保：
+- Node.js 版本兼容（推荐 18.x）
+- 依赖安装成功
+- 构建命令正确
 
-项目已包含以下Vercel优化配置：
+### Q: 提示"多区域部署仅限于 Pro 计划"？
+A: 这个错误已经修复！我们已经移除了多区域配置，现在使用默认区域，完全适合免费账户。
 
-- ✅ SWC编译器加速构建
-- ✅ 图片自动优化（WebP/AVIF）
-- ✅ 静态资源压缩
-- ✅ 安全头配置
-- ✅ 多区域部署
-- ✅ Edge缓存优化
+### Q: 分析工具不工作？
+A: 分析工具在开发环境可能不显示数据，部署到生产环境后会正常工作。
 
-## 📊 监控和分析
+### Q: 需要修改分析配置？
+A: 编辑 `components/analytics/config.ts` 文件中的配置。
 
-- **Vercel Analytics**: 已集成，自动收集性能数据
-- **构建日志**: 可在Vercel Dashboard查看
-- **实时监控**: 通过Vercel Functions监控
+## 🎯 部署检查清单
 
-## 🛠️ 故障排除
+- [ ] 代码推送到 GitHub
+- [ ] Vercel 项目创建并连接
+- [ ] 构建成功（绿色勾选）
+- [ ] 网站可以正常访问
+- [ ] 3D 编辑器功能正常
+- [ ] 导出功能测试通过
 
-### 常见问题
-
-1. **构建失败**
-   - 检查 `package.json` 依赖版本
-   - 确认 `next.config.mjs` 语法正确
-
-2. **静态资源404**
-   - 确认文件在 `public/` 目录下
-   - 检查文件路径大小写
-
-3. **环境变量未生效**
-   - 确认变量名以 `NEXT_PUBLIC_` 开头（客户端变量）
-   - 重新部署以应用新的环境变量
-
-### 支持资源
-
-- [Vercel文档](https://vercel.com/docs)
-- [Next.js部署指南](https://nextjs.org/docs/deployment)
-- [项目GitHub仓库](https://github.com/yourusername/3d-designer)
-
----
-
-## 📝 部署检查清单
-
-- [ ] 代码推送到GitHub
-- [ ] Vercel项目创建并连接
-- [ ] 环境变量配置完成
-- [ ] 自定义域名设置（可选）
-- [ ] SSL证书自动配置
-- [ ] 部署成功验证
-- [ ] 功能测试完成
-
-部署完成后，你的3D Designer应用将在几分钟内全球可访问！🎉 
+部署成功后，你的 3D Logo Maker 就可以在全球范围内访问了！🎉 

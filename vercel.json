@@ -1,11 +1,6 @@
 {
   "version": 2,
   "name": "3d-designer",
-  "functions": {
-    "app/**/*.{js,ts,tsx}": {
-      "maxDuration": 30
-    }
-  },
   "headers": [
     {
       "source": "/api/(.*)",
@@ -51,6 +46,5 @@
       "source": "/sitemap.xml",
       "destination": "/api/sitemap"
     }
-  ],
-  "regions": ["iad1", "hnd1", "sfo1"]
+  ]
 } 
