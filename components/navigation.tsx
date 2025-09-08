@@ -12,6 +12,7 @@ import { cn } from "@/lib/utils";
 
 const navigationItems = [
   { name: "Home", href: "/" },
+  { name: "Convert", href: "/convert" },
   { name: "Features", href: "/features" },
   { name: "Gallery", href: "/gallery" },
   { name: "Tutorials", href: "/tutorials" },
@@ -60,7 +61,7 @@ export function Navigation() {
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
-                <Logo className="h-8 w-8 text-primary transition-all duration-300 group-hover:text-primary/80" />
+                <Logo className="h-8 w-8 text-primary transition-all duration-300 group-hover:text-primary/80 drop-shadow-sm" />
                 <motion.div
                   className="absolute inset-0 bg-primary/20 rounded-full blur-lg"
                   initial={{ opacity: 0, scale: 0 }}
@@ -68,7 +69,7 @@ export function Navigation() {
                   transition={{ duration: 0.3 }}
                 />
               </motion.div>
-              <span className="text-xl font-semibold bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text text-transparent group-hover:from-primary group-hover:to-primary/80 transition-all duration-300">
+              <span className="text-xl font-semibold text-foreground group-hover:text-primary transition-all duration-300 drop-shadow-sm">
                 3D Designer
               </span>
             </Link>
@@ -133,7 +134,7 @@ export function Navigation() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <Link href="/edit">
+              <Link href="/#upload">
                 <Button 
                   className="safari-button modern-button bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl px-6 py-2 group"
                   size="sm"
@@ -222,7 +223,7 @@ export function Navigation() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: navigationItems.length * 0.1 }}
               >
-                <Link href="/edit" onClick={() => setIsOpen(false)}>
+                <Link href="/#upload" onClick={() => setIsOpen(false)}>
                   <Button className="w-full safari-button modern-button bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg group">
                     <Sparkles className="w-4 h-4 mr-2 group-hover:animate-pulse" />
                     Start Creating

@@ -23,6 +23,7 @@ Transform your 2D designs into stunning 3D models instantly. Professional-grade 
 
 **Core Functionality:**
 - ✨ **SVG to 3D Conversion** - Upload any SVG and instantly convert to 3D
+- 🖼️ **Image to SVG Converter** - Convert JPG, PNG, and other images to SVG vectors first
 - 🎨 **Material System** - Professional materials including metal, glass, plastic
 - 💡 **Dynamic Lighting** - Studio lighting presets and custom environments  
 - 🎛️ **Real-time Controls** - Adjust depth, beveling, colors, and more
@@ -34,6 +35,7 @@ Transform your 2D designs into stunning 3D models instantly. Professional-grade 
 - 🏠 **Home Page** - Optimized landing page with key SEO terms
 - 📖 **About Page** - Company story and mission
 - ⚡ **Features Page** - Detailed feature breakdown
+- 🔄 **Convert Page** - Image to SVG conversion tool
 - 🖼️ **Gallery Page** - Showcase of 3D logo examples
 - 📚 **Tutorials Page** - Learning resources and guides
 - 📞 **Contact Page** - Support and business inquiries
@@ -141,13 +143,34 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Email:** support@3ddesigner.com
 - **Issues:** [GitHub Issues](https://github.com/3ddesigner/issues)
 
+## 🖼️ Image to SVG Conversion
+
+Convert any raster image (JPG, PNG, BMP, etc.) into scalable SVG vector graphics before creating your 3D logo.
+
+### How to Convert Images to SVG
+
+1. **Access Converter** - Visit the `/convert` page or click "Convert Image to SVG First" from the home page
+2. **Upload Image** - Drag & drop or select your JPG/PNG image (max 10MB)
+3. **Adjust Settings** - Choose from preset modes like "Poster Style" or "Detailed Mode"
+4. **Fine-tune Parameters** - Adjust scale, color count, and other settings for optimal results
+5. **Convert** - Click "Convert to SVG" and watch the real-time transformation
+6. **Use for 3D** - Click "Create 3D Version" to directly proceed to the 3D editor
+
+### Conversion Presets
+
+- **Poster Style** (Recommended) - Perfect for logos and simple graphics
+- **Detailed Mode** - Preserves more details, larger file size
+- **Smooth Mode** - Creates smoother curves and gradients
+- **Sharp Mode** - Maintains sharp edges and corners
+- **Grayscale Mode** - Converts to black and white vectors
+
 ## 🎬 Animated GIF Export
 
 Transform your 3D logos into captivating animated GIFs perfect for social media, marketing materials, and presentations.
 
 ### How to Export Animated GIFs
 
-1. **Upload Your SVG** - Start by uploading any SVG file on the home page
+1. **Upload Your SVG** - Start by uploading any SVG file on the home page (or convert an image first)
 2. **Navigate to Editor** - Go to the `/edit` page to customize your 3D model
 3. **Enable Auto-Rotate** - In the Geometry controls tab, check "Auto-rotate model"
 4. **Export GIF** - Click the "Export GIF" button that appears when auto-rotate is enabled

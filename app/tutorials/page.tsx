@@ -58,7 +58,7 @@ export default function TutorialsPage() {
       duration: "6 min",
       views: "9.8K",
       topics: ["SVG Prep", "Optimization", "Best Practices"],
-      gif: "/pic/chat_app_animated-min.gif"
+      gif: "/pic/chat_app_animated_(1)-min.gif"
     },
     {
       title: "Exporting for Different Use Cases",

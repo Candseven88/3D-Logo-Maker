@@ -268,11 +268,11 @@ const ModelPreview = React.memo<ModelPreviewProps>(
       <Canvas
         shadows
         camera={{ position: [0, 0, 150], fov: 50 }}
-        dpr={window?.devicePixelRatio || 1.5}
-        frameloop="demand"
-        performance={{ min: 0.5 }}
+        dpr={isMobile ? 1 : Math.min(window?.devicePixelRatio || 1, 2)}
+        frameloop="always"
+        performance={{ min: 0.1 }}
         gl={{
-          antialias: true,
+          antialias: !isMobile,
           outputColorSpace: "srgb",
           toneMapping: THREE.ACESFilmicToneMapping,
           toneMappingExposure: 1.2,
@@ -490,7 +490,7 @@ export default function EditPage() {
   ]);
 
   // debounce expensive operations
-  const debouncedSvgData = useDebounce(svgData, 300);
+  const debouncedSvgData = useDebounce(svgData, 150);
 
   // update loading state when svg data changes
   useEffect(() => {
@@ -644,14 +644,9 @@ export default function EditPage() {
   };
 
   return (
-    <motion.main
-      className="min-h-screen flex flex-col"
-      variants={pageTransition}
-      initial="initial"
-      animate="animate"
-      exit="exit">
+    <div className="min-h-screen">
       <motion.header
-        className="sticky top-0 z-10 w-full bg-background/95 backdrop-blur-sm supports-backdrop-filter:bg-background/60 border-b"
+        className="fixed top-16 left-0 right-0 z-40 w-full bg-background/95 backdrop-blur-sm supports-backdrop-filter:bg-background/60 border-b"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3 }}>
@@ -679,7 +674,7 @@ export default function EditPage() {
         </div>
       </motion.header>
 
-      <div className="container flex-1 px-4 py-6">
+      <div className="container flex-1 px-4 py-6 pt-32">
         <AnimatePresence mode="wait">
           {isMobile && !continueOnMobile ? (
             <motion.div
@@ -893,6 +888,6 @@ export default function EditPage() {
           )}
         </AnimatePresence>
       </div>
-    </motion.main>
+    </div>
   );
 }

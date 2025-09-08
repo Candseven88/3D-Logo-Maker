@@ -47,8 +47,27 @@ export function FileUpload({
         }
       };
       reader.readAsText(file);
+    } else if (file && file.type.startsWith('image/')) {
+      // 处理图片文件 - 引导用户到转换页面
+      toast.error("Image files need to be converted to SVG first. Redirecting to converter...", {
+        action: {
+          label: "Convert Now",
+          onClick: () => {
+            // 临时存储文件
+            const reader = new FileReader();
+            reader.onload = (event) => {
+              if (event.target?.result) {
+                sessionStorage.setItem('pendingImageFile', event.target.result as string);
+                sessionStorage.setItem('pendingImageName', file.name);
+                window.location.href = '/convert';
+              }
+            };
+            reader.readAsDataURL(file);
+          }
+        }
+      });
     } else if (file) {
-      toast.error("Please upload an SVG file (.svg)");
+      toast.error("Please upload an SVG file (.svg) or convert your image first");
     }
   };
 

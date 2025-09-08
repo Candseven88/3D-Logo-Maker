@@ -96,7 +96,7 @@ export default function GalleryPage() {
       category: "Creative",
       description: "Modern messaging and communication app design",
       difficulty: "Intermediate",
-      image: "/pic/chat_app_animated-min.gif",
+      image: "/pic/chat_app_animated_(1)-min.gif",
       svg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
         <rect x="20" y="25" width="60" height="40" rx="8" fill="currentColor"/>
         <circle cx="35" cy="45" r="3" fill="white"/>

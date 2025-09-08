@@ -9,6 +9,7 @@ import { RainbowButton } from "@/components/ui/rainbow-button";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   ArrowRight, 
@@ -18,6 +19,7 @@ import {
   Upload,
   Palette,
   Download,
+  Image as ImageIcon,
   Eye,
   Zap,
   Users,
@@ -25,8 +27,6 @@ import {
   Sparkles
 } from "lucide-react";
 import Link from "next/link";
-import { toast } from "sonner";
-import Script from "next/script";
 
 export default function Home() {
   const [svgData, setSvgData] = useState<string | null>(null);
@@ -74,7 +74,7 @@ export default function Home() {
           localStorage.setItem("continueOnMobile", "true");
         }
 
-        // Remove unnecessary delay for faster navigation
+        await new Promise((resolve) => setTimeout(resolve, 100));
         router.push("/edit");
       } catch (error) {
         console.error("Error during navigation:", error);
@@ -110,47 +110,23 @@ export default function Home() {
     {
       name: "Sarah Chen",
       role: "Creative Director",
-      company: "TechFlow Solutions",
-      content: "This tool completely transformed our logo creation process. We can now create professional 3D logos in-house in minutes. The quality rivals top design agencies.",
-      rating: 5,
-      avatar: "SC",
-      benefit: "Streamlined design workflow by 80%"
+      company: "TechFlow",
+      content: "This tool completely transformed our logo creation process. The 3D results are incredibly professional.",
+      rating: 5
     },
     {
       name: "Marcus Rodriguez", 
       role: "Brand Designer",
       company: "Innovate Labs",
-      content: "I've tried Blender, Cinema 4D, and other expensive tools, but nothing beats this for speed and simplicity. My clients are amazed by the professional results.",
-      rating: 5,
-      avatar: "MR",
-      benefit: "Increased client satisfaction by 40%"
+      content: "I've tried many 3D tools, but this one is by far the most intuitive and produces stunning results.",
+      rating: 5
     },
     {
       name: "Emily Watson",
       role: "Marketing Manager", 
       company: "StartupXYZ",
-      content: "As a non-designer, I was worried about creating professional logos. This tool made it so easy that I created our entire brand identity in one afternoon!",
-      rating: 5,
-      avatar: "EW",
-      benefit: "Created 12 logos in 2 hours"
-    },
-    {
-      name: "David Kim",
-      role: "Freelance Designer", 
-      company: "Independent",
-      content: "Game-changer for my freelance business. I can now offer 3D logos to clients without the learning curve of complex 3D software. My clients love the professional results.",
-      rating: 5,
-      avatar: "DK",
-      benefit: "Expanded service offerings with 3D designs"
-    },
-    {
-      name: "Lisa Thompson",
-      role: "Small Business Owner", 
-      company: "Eco Beauty Co.",
-      content: "Perfect for entrepreneurs who need professional results quickly. This tool gave us stunning 3D logos that perfectly represent our brand identity.",
-      rating: 5,
-      avatar: "LT",
-      benefit: "Created professional brand identity in hours"
+      content: "Finally, a tool that makes 3D logo creation accessible to everyone. Love the real-time preview!",
+      rating: 5
     }
   ];
 
@@ -168,49 +144,8 @@ export default function Home() {
     return () => clearInterval(interval);
   }, [testimonials.length]);
 
-  // JSON-LD structured data for SEO
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "3D Designer",
-    "description": "Free online 3D logo maker and SVG to 3D converter. Create professional 3D logos instantly with no signup required.",
-    "url": "https://3dlogo.site",
-    "applicationCategory": "DesignApplication",
-    "operatingSystem": "Any",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD",
-      "availability": "https://schema.org/InStock"
-    },
-    "creator": {
-      "@type": "Organization",
-      "name": "3D Designer"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "ratingCount": "1250",
-      "bestRating": "5"
-    },
-    "featureList": [
-      "SVG to 3D conversion",
-      "Professional materials library",
-      "Real-time 3D preview",
-      "Multiple export formats",
-      "No registration required",
-      "Browser-based processing"
-    ]
-  };
-
   return (
-    <>
-      <Script
-        id="json-ld"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <div className="relative">
+    <div className="relative">
       {/* Loading Overlay */}
       <AnimatePresence>
         {isLoading && (
@@ -306,30 +241,21 @@ export default function Home() {
               </motion.p>
 
               <motion.div
-                className="flex flex-col gap-6 justify-center items-center mb-16"
+                className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
               >
-                {/* Main CTA - Single prominent button */}
-                <Link href="#upload">
-                  <RainbowButton className="h-auto px-12 py-6 text-xl font-semibold">
-                    Start Creating Now
-                    <ArrowRight className="ml-3 h-6 w-6" />
-                  </RainbowButton>
-                </Link>
-                
-                {/* Secondary CTAs - Smaller, less prominent */}
-                <div className="flex flex-col sm:flex-row gap-3 items-center text-sm">
-                  <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground">
-                    <Play className="mr-2 h-4 w-4" />
-                    Watch Demo
-                  </Button>
-                  <span className="text-muted-foreground">•</span>
-                  <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground" asChild>
-                    <Link href="#examples">Try with Examples</Link>
-                  </Button>
-                </div>
+                <Button size="lg" asChild className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg">
+                  <Link href="#upload">
+                    Get Started Free
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+                <Button variant="outline" size="lg" className="px-8 py-6 text-lg">
+                  <Play className="mr-2 h-5 w-5" />
+                  Watch Demo
+                </Button>
               </motion.div>
 
               {/* Stats */}
@@ -383,26 +309,11 @@ export default function Home() {
                 <video 
                   className="w-full h-full object-cover"
                   preload="metadata"
-                  poster="/demo-poster.svg"
+                  poster="/pic/preview-poster.jpg"
                   id="demo-video"
-                  controls={false}
-                  playsInline
-                  muted
                 >
-                  {/* H.264 MP4 format for maximum compatibility */}
-                  <source src="/pic/3D guide.mp4" type="video/mp4; codecs=avc1.42E01E,mp4a.40.2" />
-                  {/* WebM format for modern browsers - fallback to MP4 until WebM version is created */}
                   <source src="/pic/3D guide.mp4" type="video/mp4" />
-                  {/* Fallback message with better styling */}
-                  <div className="flex items-center justify-center h-full bg-gradient-to-br from-primary/10 to-primary/5 text-center">
-                    <div className="p-8">
-                      <div className="text-lg font-medium mb-2">Video Not Supported</div>
-                      <div className="text-muted-foreground mb-4">Your browser doesn't support video playback</div>
-                      <Button variant="outline" asChild>
-                        <Link href="/features">View Features Instead</Link>
-                      </Button>
-                    </div>
-                  </div>
+                  Your browser does not support the video tag.
                 </video>
                 
                 {/* Play Button Overlay */}
@@ -451,106 +362,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Three-Step Guide */}
-      <section className="py-16 bg-muted/20">
-        <div className="container mx-auto px-4">
-          <motion.div
-            className="max-w-5xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <div className="text-center mb-12">
-              <h2 className="text-2xl md:text-3xl font-bold mb-4">
-                Create Your 3D Logo in 3 Simple Steps
-              </h2>
-              <p className="text-lg text-muted-foreground">
-                Professional 3D logos in minutes, no design experience needed
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-                {
-                  step: "1",
-                  title: "Upload SVG",
-                  description: "Drag & drop your logo file or try our examples",
-                  icon: <Upload className="h-8 w-8" />,
-                  color: "from-blue-500 to-cyan-500"
-                },
-                {
-                  step: "2",
-                  title: "Choose Material",
-                  description: "Select from metal, glass, plastic, and more professional materials",
-                  icon: <Palette className="h-8 w-8" />,
-                  color: "from-purple-500 to-pink-500"
-                },
-                {
-                  step: "3",
-                  title: "Export & Share",
-                  description: "Download in multiple formats: PNG, STL, GLB, GLTF",
-                  icon: <Download className="h-8 w-8" />,
-                  color: "from-green-500 to-emerald-500"
-                }
-              ].map((step, index) => (
-                <motion.div
-                  key={step.step}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.2 }}
-                  viewport={{ once: true }}
-                  className="relative"
-                >
-                  <Card className="p-6 h-full text-center hover:shadow-lg transition-all duration-300 bg-background/80 backdrop-blur-sm border-border/50">
-                    {/* Step connector line */}
-                    {index < 2 && (
-                      <div className="absolute top-16 left-full w-8 h-0.5 bg-gradient-to-r from-primary/50 to-transparent hidden md:block z-10" />
-                    )}
-                    
-                    {/* Step number badge */}
-                    <div className={`w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r ${step.color} flex items-center justify-center text-white text-xl font-bold shadow-lg`}>
-                      {step.step}
-                    </div>
-                    
-                    {/* Step icon */}
-                    <div className="text-primary mb-4 flex justify-center">
-                      {step.icon}
-                    </div>
-                    
-                    {/* Step content */}
-                    <h3 className="text-xl font-semibold mb-3">{step.title}</h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">{step.description}</p>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* CTA button */}
-            <motion.div
-              className="text-center mt-12"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <Button size="lg" variant="outline" asChild className="px-8 py-6 text-lg">
-                <Link href="#upload">
-                  Start Your First Logo
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Upload Section */}
       <section id="upload" className="py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <motion.div
-              className="text-center mb-16"
+              className="text-center mb-12"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -560,9 +377,43 @@ export default function Home() {
                 Start Creating Your 3D Logo
               </h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Upload your SVG logo and watch it transform into professional 3D in real-time
+                Choose your preferred workflow to create stunning 3D logos
               </p>
             </motion.div>
+
+            {/* Workflow Tabs */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="mb-8"
+            >
+              <Tabs defaultValue="svg-to-3d" className="w-full">
+                <TabsList className="grid w-full max-w-2xl mx-auto grid-cols-2 mb-8 bg-muted/30 p-2 rounded-lg">
+                  <TabsTrigger 
+                    value="svg-to-3d" 
+                    className="flex items-center gap-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-md transition-all duration-300 rounded-md py-3 px-4 font-medium"
+                  >
+                    <Upload className="w-4 h-4" />
+                    SVG to 3D
+                  </TabsTrigger>
+                  <TabsTrigger 
+                    value="image-to-svg" 
+                    className="flex items-center gap-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-md transition-all duration-300 rounded-md py-3 px-4 font-medium"
+                  >
+                    <ImageIcon className="w-4 h-4" />
+                    Image to SVG
+                  </TabsTrigger>
+                </TabsList>
+
+                <TabsContent value="svg-to-3d" className="space-y-6">
+                  <div className="text-center mb-6">
+                    <h3 className="text-xl font-semibold mb-2">Transform SVG to 3D</h3>
+                    <p className="text-muted-foreground">
+                      Already have an SVG? Upload it directly and watch it transform into professional 3D
+                    </p>
+                  </div>
 
             <AnimatePresence mode="wait">
               {isMobile && !continueOnMobile ? (
@@ -595,80 +446,6 @@ export default function Home() {
                       Works best with SVGs having simple geometry and transparent background
                     </p>
                   </div>
-
-                  {/* Example SVGs Section */}
-                  <motion.div
-                    className="mt-8 mb-12"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                    id="examples"
-                  >
-                    <div className="text-center mb-6">
-                      <h3 className="text-lg font-semibold mb-2">Try with Example SVGs</h3>
-                      <p className="text-sm text-muted-foreground">
-                        Get started instantly with these popular logos
-                      </p>
-                    </div>
-                    
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-2xl mx-auto">
-                      {[
-                        {
-                          name: "Simple Shield",
-                          svg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M50 10 L80 25 L80 60 Q80 80 50 90 Q20 80 20 60 L20 25 Z" fill="currentColor"/>
-                          </svg>`,
-                          color: "text-blue-600"
-                        },
-                        {
-                          name: "Hexagon Logo",
-                          svg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                            <polygon points="50,15 75,30 75,60 50,75 25,60 25,30" fill="currentColor"/>
-                            <circle cx="50" cy="50" r="15" fill="white"/>
-                          </svg>`,
-                          color: "text-purple-600"
-                        },
-                        {
-                          name: "Star Badge",
-                          svg: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M50 20 L60 40 L80 40 L65 55 L70 75 L50 65 L30 75 L35 55 L20 40 L40 40 Z" fill="currentColor"/>
-                          </svg>`,
-                          color: "text-yellow-600"
-                        }
-                      ].map((example, index) => (
-                        <motion.div
-                          key={example.name}
-                          initial={{ opacity: 0, y: 20 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{ duration: 0.4, delay: 0.1 * index }}
-                          className="group"
-                        >
-                          <Card className="p-4 hover:shadow-lg transition-all duration-300 cursor-pointer hover:-translate-y-1 border-border/50 bg-background/50 backdrop-blur-sm">
-                            <div 
-                              className="flex flex-col items-center gap-3"
-                              onClick={() => {
-                                handleFileUpload(example.svg, `${example.name}.svg`);
-                                toast.success(`${example.name} loaded! Scroll down to continue.`);
-                              }}
-                            >
-                              <div className={`w-12 h-12 ${example.color} flex items-center justify-center`}>
-                                <div 
-                                  dangerouslySetInnerHTML={{ __html: example.svg }}
-                                  className="w-full h-full"
-                                />
-                              </div>
-                              <div className="text-center">
-                                <div className="text-sm font-medium">{example.name}</div>
-                                <div className="text-xs text-muted-foreground group-hover:text-primary transition-colors">
-                                  Click to try
-                                </div>
-                              </div>
-                            </div>
-                          </Card>
-                        </motion.div>
-                      ))}
-                    </div>
-                  </motion.div>
 
                   <div
                     id="continue-button-section"
@@ -709,6 +486,51 @@ export default function Home() {
                 </motion.div>
               )}
             </AnimatePresence>
+                </TabsContent>
+
+                <TabsContent value="image-to-svg" className="space-y-6">
+                  <div className="text-center mb-6">
+                    <h3 className="text-xl font-semibold mb-2">Convert Image to SVG</h3>
+                    <p className="text-muted-foreground">
+                      Have a JPG or PNG image? Convert it to SVG first, then create your 3D logo
+                    </p>
+                  </div>
+
+                  <div className="max-w-md mx-auto">
+                    <Link href="/convert">
+                      <Button size="lg" className="w-full h-16 text-lg">
+                        <ImageIcon className="w-6 h-6 mr-3" />
+                        Start Image Conversion
+                        <ArrowRight className="w-5 h-5 ml-3" />
+                      </Button>
+                    </Link>
+                    <p className="text-center text-sm text-muted-foreground mt-4">
+                      Supports JPG, PNG, BMP and other image formats
+                    </p>
+                  </div>
+
+                  {/* Features of Image to SVG */}
+                  <div className="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto mt-8">
+                    <div className="flex items-center gap-3 p-4 bg-muted/30 rounded-lg">
+                      <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                      <span className="text-sm">Multiple preset modes</span>
+                    </div>
+                    <div className="flex items-center gap-3 p-4 bg-muted/30 rounded-lg">
+                      <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                      <span className="text-sm">Real-time preview</span>
+                    </div>
+                    <div className="flex items-center gap-3 p-4 bg-muted/30 rounded-lg">
+                      <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                      <span className="text-sm">High-quality output</span>
+                    </div>
+                    <div className="flex items-center gap-3 p-4 bg-muted/30 rounded-lg">
+                      <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                      <span className="text-sm">Direct 3D workflow</span>
+                    </div>
+                  </div>
+                </TabsContent>
+              </Tabs>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -796,14 +618,12 @@ export default function Home() {
               >
                                  <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
                    <div className="aspect-square bg-gradient-to-br from-primary/5 to-primary/10 gif-container">
-                                         <img 
-                      src={example.image} 
-                      alt={`${example.title} 3D logo animation - ${example.category} design example`}
-                      className="animated-gif"
-                      loading="lazy"
-                      width="400"
-                      height="400"
-                    />
+                     <img 
+                       src={example.image} 
+                       alt={`${example.title} 3D logo`}
+                       className="animated-gif"
+                       loading="lazy"
+                     />
                   </div>
                   <div className="p-4 text-center">
                     <Badge variant="secondary" className="mb-2">{example.category}</Badge>
@@ -858,43 +678,19 @@ export default function Home() {
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.5 }}
               >
-                <Card className="p-8 bg-gradient-to-br from-background to-muted/30 border-border/50">
-                  <div className="flex flex-col md:flex-row gap-6 items-start">
-                    {/* Avatar */}
-                    <div className="flex-shrink-0 mx-auto md:mx-0">
-                      <div className="w-16 h-16 rounded-full bg-gradient-to-r from-primary to-primary/70 flex items-center justify-center text-white font-bold text-lg shadow-lg">
-                        {testimonials[currentTestimonial].avatar}
-                      </div>
-                    </div>
-                    
-                    {/* Content */}
-                    <div className="flex-1 text-center md:text-left">
-                      {/* Rating */}
-                      <div className="flex justify-center md:justify-start mb-4">
-                        {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
-                          <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                        ))}
-                      </div>
-                      
-                      {/* Quote */}
-                      <blockquote className="text-lg mb-4 text-muted-foreground italic leading-relaxed">
-                        "{testimonials[currentTestimonial].content}"
-                      </blockquote>
-                      
-                      {/* Benefit Badge */}
-                      <div className="mb-4">
-                        <Badge variant="secondary" className="bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">
-                          ✓ {testimonials[currentTestimonial].benefit}
-                        </Badge>
-                      </div>
-                      
-                      {/* Author */}
-                      <div>
-                        <div className="font-semibold text-lg">{testimonials[currentTestimonial].name}</div>
-                        <div className="text-muted-foreground">
-                          {testimonials[currentTestimonial].role} at {testimonials[currentTestimonial].company}
-                        </div>
-                      </div>
+                <Card className="p-8 text-center bg-gradient-to-br from-background to-muted/30 border-border/50">
+                  <div className="flex justify-center mb-4">
+                    {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                    ))}
+                  </div>
+                  <blockquote className="text-lg md:text-xl mb-6 text-muted-foreground italic">
+                    "{testimonials[currentTestimonial].content}"
+                  </blockquote>
+                  <div>
+                    <div className="font-semibold text-lg">{testimonials[currentTestimonial].name}</div>
+                    <div className="text-muted-foreground">
+                      {testimonials[currentTestimonial].role} at {testimonials[currentTestimonial].company}
                     </div>
                   </div>
                 </Card>
@@ -912,94 +708,6 @@ export default function Home() {
                 />
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-
-      {/* FAQ Section */}
-      <section className="py-24 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Everything you need to know about creating 3D logos
-            </p>
-          </motion.div>
-
-          <div className="max-w-4xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-6">
-              {[
-                {
-                  question: "What file formats are supported?",
-                  answer: "We support SVG files for input. For export, you can download PNG (high-resolution images), STL (3D printing), GLB/GLTF (3D models), and animated GIF formats."
-                },
-                {
-                  question: "Is my data private and secure?",
-                  answer: "Absolutely! All processing happens locally in your browser. Your files never leave your device, ensuring complete privacy and security of your designs."
-                },
-                {
-                  question: "Do you retain rights to my logos?",
-                  answer: "No, you retain full ownership and copyright of your designs. We don't claim any rights to your uploaded files or created 3D logos."
-                },
-                {
-                  question: "Can I use logos commercially?",
-                  answer: "Yes! You can use your created 3D logos for any purpose including commercial use. Perfect for businesses, marketing materials, and client projects."
-                },
-                {
-                  question: "What if my SVG doesn't work well?",
-                  answer: "SVGs with simple geometry and solid fills work best. Avoid complex gradients, patterns, or text. Try our example SVGs first to see what works great!"
-                },
-                {
-                  question: "How long does it take to create a 3D logo?",
-                  answer: "Most logos are ready in under a minute! Simply upload your SVG, choose your preferred material and lighting, then export. The entire process is designed to be fast and intuitive."
-                },
-                {
-                  question: "Do I need design experience?",
-                  answer: "Not at all! Our tool is designed for everyone. Just upload an SVG file and our system handles the complex 3D conversion automatically. You can then customize materials and lighting with simple controls."
-                }
-              ].map((faq, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <Card className="p-6 h-full hover:shadow-lg transition-all duration-300 bg-background/80 backdrop-blur-sm border-border/50">
-                    <h3 className="text-lg font-semibold mb-3 text-primary">
-                      {faq.question}
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed text-sm">
-                      {faq.answer}
-                    </p>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
-
-            <motion.div
-              className="text-center mt-12"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <p className="text-muted-foreground mb-4">
-                Still have questions?
-              </p>
-              <Button variant="outline" asChild>
-                <Link href="/contact">Contact Support</Link>
-              </Button>
-            </motion.div>
           </div>
         </div>
       </section>
@@ -1037,6 +745,5 @@ export default function Home() {
         </div>
       </section>
     </div>
-    </>
   );
 }
