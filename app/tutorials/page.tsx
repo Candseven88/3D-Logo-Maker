@@ -31,7 +31,7 @@ export default function TutorialsPage() {
       duration: "5 min",
       views: "12.5K",
       topics: ["Upload", "Interface", "Basic Controls"],
-      gif: "/pic/github_animated (1).gif"
+      gif: "/pic/Simple_Shield_animated-min.gif"
     },
     {
       title: "Understanding Materials and Textures",
@@ -40,7 +40,7 @@ export default function TutorialsPage() {
       duration: "8 min",
       views: "8.2K",
       topics: ["Materials", "Textures", "Lighting"],
-      gif: "/pic/vercel_animated (1).gif"
+      gif: "/pic/Star_Badge_animated-min.gif"
     },
     {
       title: "Advanced Lighting Techniques",
@@ -49,7 +49,7 @@ export default function TutorialsPage() {
       duration: "12 min",
       views: "5.4K",
       topics: ["Lighting", "Environments", "Shadows"],
-      gif: "/pic/x_animated (1).gif"
+      gif: "/pic/Hexagon_Logo_animated-min.gif"
     },
     {
       title: "Optimizing SVGs for 3D Conversion",
@@ -58,7 +58,7 @@ export default function TutorialsPage() {
       duration: "6 min",
       views: "9.8K",
       topics: ["SVG Prep", "Optimization", "Best Practices"],
-      gif: "/pic/cube-outline-svgrepo-com_animated (1).gif"
+      gif: "/pic/chat_app_animated-min.gif"
     },
     {
       title: "Exporting for Different Use Cases",
@@ -67,7 +67,7 @@ export default function TutorialsPage() {
       duration: "7 min",
       views: "6.7K",
       topics: ["Export", "Formats", "Quality"],
-      gif: "/pic/v0.dev_animated (1).gif"
+      gif: "/pic/vercel_animated (1).gif"
     },
     {
       title: "Creating Complex Logo Animations",
@@ -76,7 +76,7 @@ export default function TutorialsPage() {
       duration: "15 min",
       views: "3.9K",
       topics: ["Animation", "Effects", "Advanced"],
-      gif: "/pic/chat_app_animated (1).gif"
+      gif: "/pic/github_animated (1).gif"
     }
   ];
 

@@ -295,19 +295,19 @@ export default function FeaturesPage() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {[
             {
-              title: "X Platform",
-              image: "/pic/x_animated (1).gif",
-              description: "Social media branding"
+              title: "Simple Shield",
+              image: "/pic/Simple_Shield_animated-min.gif",
+              description: "Professional security design"
             },
             {
-              title: "V0.dev",
-              image: "/pic/v0.dev_animated (1).gif",
-              description: "AI development tool"
+              title: "Star Badge",
+              image: "/pic/Star_Badge_animated-min.gif",
+              description: "Premium award design"
             },
             {
-              title: "3D Cube",
-              image: "/pic/cube-outline-svgrepo-com_animated (1).gif",
-              description: "Geometric design"
+              title: "Hexagon Logo",
+              image: "/pic/Hexagon_Logo_animated-min.gif",
+              description: "Modern geometric design"
             }
           ].map((example, index) => (
                          <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow group">
