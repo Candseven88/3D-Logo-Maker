@@ -1,12 +1,6 @@
 {
   "version": 2,
   "name": "3d-designer",
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/next"
-    }
-  ],
   "functions": {
     "app/**/*.{js,ts,tsx}": {
       "maxDuration": 30
