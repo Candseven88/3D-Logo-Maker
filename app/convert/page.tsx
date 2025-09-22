@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ImageToSvgConverter from "@/components/image-to-svg-converter";
+import { AdsterraBanner, AdsterraSidebar } from "@/components/adsterra-ad";
 
 export const metadata: Metadata = {
   title: "Image to SVG Converter | Convert Photos to Vector Graphics",
@@ -23,8 +24,13 @@ export const metadata: Metadata = {
 
 export default function ConvertPage() {
   return (
-    <div className="container mx-auto px-4 py-8">
-      <ImageToSvgConverter />
-    </div>
+    <>
+      <AdsterraSidebar />
+      <div className="container mx-auto px-4 py-8">
+        <AdsterraBanner className="mb-8" />
+        <ImageToSvgConverter />
+        <AdsterraBanner className="mt-8" />
+      </div>
+    </>
   );
 } 

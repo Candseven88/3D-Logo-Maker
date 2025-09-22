@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { AdsterraBanner, AdsterraSidebar } from "@/components/adsterra-ad";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -92,6 +93,8 @@ export default function ContactPage() {
   ];
 
   return (
+    <>
+      <AdsterraSidebar />
     <div className="container mx-auto px-4 py-16">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
@@ -298,7 +301,9 @@ export default function ContactPage() {
             </CardContent>
           </Card>
         </div>
+        <AdsterraBanner className="mt-16" />
       </div>
     </div>
+    </>
   );
 } 

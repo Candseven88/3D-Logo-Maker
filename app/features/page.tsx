@@ -19,8 +19,9 @@ import {
   Smartphone,
   Heart
 } from "lucide-react";
-import Link from "next/link";
 
+import { AdsterraAd, AdsterraBanner } from "@/components/adsterra-ad";
+import Link from "next/link";
 export const metadata: Metadata = {
   title: "Features | Professional 3D Logo Maker & SVG Converter",
   description: "Discover all features of our free 3D logo maker. Convert SVG to 3D, customize materials, export in multiple formats. Professional results in minutes.",
@@ -201,6 +202,8 @@ export default function FeaturesPage() {
           Professional-grade 3D design tools, completely free and running entirely in your browser. 
           No downloads, no sign-ups, no compromises.
         </p>
+        {/* ADSTERRA Banner Ad */}
+        <AdsterraBanner className="my-12" />
       </div>
 
       {/* Core Features Grid */}
@@ -210,6 +213,8 @@ export default function FeaturesPage() {
           {coreFeatures.map((feature, index) => (
             <Card key={index} className="h-full hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
               <CardHeader>
+        {/* ADSTERRA Banner Ad */}
+        <AdsterraBanner className="my-12" />
                 <div className="text-primary mb-4">{feature.icon}</div>
                 <CardTitle className="text-xl mb-2">{feature.title}</CardTitle>
                 <CardDescription className="text-base">
@@ -228,7 +233,11 @@ export default function FeaturesPage() {
               </CardContent>
             </Card>
           ))}
+        {/* ADSTERRA Banner Ad */}
+        <AdsterraBanner className="my-12" />
         </div>
+        {/* ADSTERRA Banner Ad */}
+        <AdsterraBanner className="my-12" />
       </div>
 
       {/* Additional Features */}
@@ -237,12 +246,18 @@ export default function FeaturesPage() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {additionalFeatures.map((feature, index) => (
             <Card key={index} className="p-6 text-center hover:shadow-lg transition-shadow">
+        {/* ADSTERRA Banner Ad */}
+        <AdsterraBanner className="my-12" />
               <div className="text-primary mb-4 flex justify-center">{feature.icon}</div>
               <h3 className="font-semibold mb-2">{feature.title}</h3>
               <p className="text-sm text-muted-foreground">{feature.description}</p>
             </Card>
           ))}
+        {/* ADSTERRA Banner Ad */}
+        <AdsterraBanner className="my-12" />
         </div>
+        {/* ADSTERRA Banner Ad */}
+        <AdsterraBanner className="my-12" />
       </div>
 
       {/* Export Formats */}
@@ -252,6 +267,8 @@ export default function FeaturesPage() {
           {exportFormats.map((format, index) => (
             <Card key={index} className="text-center h-full">
               <CardHeader>
+        {/* ADSTERRA Banner Ad */}
+        <AdsterraBanner className="my-12" />
                 <div className="text-primary mb-4 flex justify-center">{format.icon}</div>
                 <CardTitle className="text-2xl font-bold">{format.format}</CardTitle>
                 <CardDescription>{format.description}</CardDescription>
@@ -263,11 +280,17 @@ export default function FeaturesPage() {
                       {useCase}
                     </Badge>
                   ))}
+        {/* ADSTERRA Banner Ad */}
+        <AdsterraBanner className="my-12" />
                 </div>
               </CardContent>
             </Card>
           ))}
+        {/* ADSTERRA Banner Ad */}
+        <AdsterraBanner className="my-12" />
         </div>
+        {/* ADSTERRA Banner Ad */}
+        <AdsterraBanner className="my-12" />
       </div>
 
       {/* Workflow */}
@@ -278,12 +301,20 @@ export default function FeaturesPage() {
             <div key={index} className="text-center">
               <div className="w-16 h-16 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mb-4 mx-auto">
                 {step.step}
+        {/* ADSTERRA Banner Ad */}
+        <AdsterraBanner className="my-12" />
               </div>
               <h3 className="text-xl font-semibold mb-3">{step.title}</h3>
               <p className="text-muted-foreground">{step.description}</p>
+        {/* ADSTERRA Banner Ad */}
+        <AdsterraBanner className="my-12" />
             </div>
           ))}
+        {/* ADSTERRA Banner Ad */}
+        <AdsterraBanner className="my-12" />
         </div>
+        {/* ADSTERRA Banner Ad */}
+        <AdsterraBanner className="my-12" />
       </div>
 
       {/* Examples Showcase */}
@@ -318,6 +349,8 @@ export default function FeaturesPage() {
                    className="animated-gif"
                    loading="lazy"
                  />
+        {/* ADSTERRA Banner Ad */}
+        <AdsterraBanner className="my-12" />
               </div>
               <CardContent className="p-4 text-center">
                 <h3 className="font-semibold mb-1">{example.title}</h3>
@@ -325,7 +358,11 @@ export default function FeaturesPage() {
               </CardContent>
             </Card>
           ))}
+        {/* ADSTERRA Banner Ad */}
+        <AdsterraBanner className="my-12" />
         </div>
+        {/* ADSTERRA Banner Ad */}
+        <AdsterraBanner className="my-12" />
       </div>
 
       {/* CTA Section */}
@@ -349,10 +386,16 @@ export default function FeaturesPage() {
                   View Examples
                 </Link>
               </Button>
+        {/* ADSTERRA Banner Ad */}
+        <AdsterraBanner className="my-12" />
             </div>
           </CardContent>
         </Card>
+        {/* ADSTERRA Banner Ad */}
+        <AdsterraBanner className="my-12" />
       </div>
+        {/* ADSTERRA Banner Ad */}
+        <AdsterraBanner className="my-12" />
     </div>
   );
 } 

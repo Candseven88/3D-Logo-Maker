@@ -27,6 +27,7 @@ import {
 import { BlendFunction } from "postprocessing";
 import React from "react";
 
+import { AdsterraAd, AdsterraSidebar, AdsterraFloating } from "@/components/adsterra-ad";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Tooltip,
@@ -644,6 +645,9 @@ export default function EditPage() {
   };
 
   return (
+    <>
+      <AdsterraSidebar />
+      <AdsterraFloating />
     <div className="min-h-screen">
       <motion.header
         className="fixed top-16 left-0 right-0 z-40 w-full bg-background/95 backdrop-blur-sm supports-backdrop-filter:bg-background/60 border-b"
@@ -881,6 +885,8 @@ export default function EditPage() {
                         </TabsContent>
                       </AnimatePresence>
                     </Tabs>
+                    {/* ADSTERRA Ad */}
+                    <AdsterraAd position="inline" className="my-4" />
                   </CardContent>
                 </Card>
               </motion.div>
@@ -889,5 +895,6 @@ export default function EditPage() {
         </AnimatePresence>
       </div>
     </div>
+    </>
   );
 }

@@ -1,11 +1,12 @@
 "use client";
 
+import { useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowRight, Play } from "lucide-react";
-import { useEffect } from "react";
+import { AdsterraAd, AdsterraBanner } from "@/components/adsterra-ad";
 
 export default function GalleryPage() {
   // Set page metadata dynamically
@@ -235,6 +236,8 @@ export default function GalleryPage() {
             Discover amazing 3D logos created with our platform. From simple icons to complex designs, 
             see what's possible when you transform 2D SVGs into stunning 3D models.
           </p>
+        {/* ADSTERRA Banner Ad */}
+        <AdsterraBanner className="my-12" />
         </div>
 
         {/* Categories */}
@@ -245,6 +248,8 @@ export default function GalleryPage() {
               {category.name} ({category.count})
             </Badge>
           ))}
+        {/* ADSTERRA Banner Ad */}
+        <AdsterraBanner className="my-12" />
         </div>
 
         {/* Gallery Grid */}
@@ -275,12 +280,18 @@ export default function GalleryPage() {
                       Try This Template
                     </Button>
                   </Link>
+        {/* ADSTERRA Banner Ad */}
+        <AdsterraBanner className="my-12" />
                 </div>
+        {/* ADSTERRA Banner Ad */}
+        <AdsterraBanner className="my-12" />
               </div>
               <CardContent className="p-6">
                 <div className="flex items-center gap-2 mb-3">
                   <Badge variant="secondary">{example.category}</Badge>
                   <Badge variant="outline">{example.difficulty}</Badge>
+        {/* ADSTERRA Banner Ad */}
+        <AdsterraBanner className="my-12" />
                 </div>
                 <h3 className="text-xl font-semibold mb-2">{example.title}</h3>
                 <p className="text-muted-foreground text-sm mb-4 leading-relaxed">{example.description}</p>
@@ -320,10 +331,14 @@ export default function GalleryPage() {
                   >
                     Download SVG
                   </Button>
+        {/* ADSTERRA Banner Ad */}
+        <AdsterraBanner className="my-12" />
                 </div>
               </CardContent>
             </Card>
           ))}
+        {/* ADSTERRA Banner Ad */}
+        <AdsterraBanner className="my-12" />
         </div>
 
         {/* Call to Action */}
@@ -346,9 +361,13 @@ export default function GalleryPage() {
                     Explore Features
                   </Link>
                 </Button>
+        {/* ADSTERRA Banner Ad */}
+        <AdsterraBanner className="my-12" />
               </div>
             </CardContent>
           </Card>
+        {/* ADSTERRA Banner Ad */}
+        <AdsterraBanner className="my-12" />
         </div>
 
         {/* Features Preview */}
@@ -371,8 +390,14 @@ export default function GalleryPage() {
               Help others discover the best designs through community ratings.
             </p>
           </Card>
+        {/* ADSTERRA Banner Ad */}
+        <AdsterraBanner className="my-12" />
         </div>
+        {/* ADSTERRA Banner Ad */}
+        <AdsterraBanner className="my-12" />
       </div>
+        {/* ADSTERRA Banner Ad */}
+        <AdsterraBanner className="my-12" />
     </div>
   );
 } 

@@ -10,6 +10,7 @@ import type { Metadata } from "next";
 import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
 import { Analytics } from "@/components/analytics";
 import { analyticsConfig } from "@/components/analytics/config";
+import { IndexNowClient } from "@/components/indexnow-client";
 
 const instrumentSans = Instrument_Sans({
   subsets: ["latin"],
@@ -121,6 +122,7 @@ export default function RootLayout({
           {/* Analytics Components */}
           <Analytics />
           {analyticsConfig.vercel.enabled && <VercelAnalytics />}
+          <IndexNowClient enabled={process.env.NODE_ENV === 'production'} />
           <SonnerToaster
             position="top-center"
             richColors

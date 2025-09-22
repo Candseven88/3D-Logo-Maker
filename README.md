@@ -30,6 +30,7 @@ Transform your 2D designs into stunning 3D models instantly. Professional-grade 
 - 📁 **Multi-format Export** - STL, GLB, GLTF, and high-res PNG export
 - 🎬 **Animated GIF Export** - Export rotating 3D models as animated GIFs (when auto-rotate is enabled)
 - 🔒 **Privacy First** - All processing happens in your browser
+- 🚀 **IndexNow Integration** - Automatic search engine indexing for faster discovery
 
 **SEO Optimized Multi-page Website:**
 - 🏠 **Home Page** - Optimized landing page with key SEO terms
@@ -111,6 +112,7 @@ Visit `http://localhost:3000` to see the application.
 - **Styling:** Tailwind CSS
 - **Animations:** Framer Motion
 - **State Management:** Zustand
+- **SEO & Indexing:** IndexNow Protocol
 - **Deployment:** Vercel
 
 ## 📈 SEO Performance
@@ -123,6 +125,32 @@ The multi-page architecture targets key search terms:
 - **Tutorials** (`/tutorials`) - "3d logo tutorial", "svg conversion guide"
 - **About** (`/about`) - "about 3d designer", "logo maker company"
 
+## 🔍 SEO & Search Engine Optimization
+
+This project includes advanced SEO features:
+
+- **IndexNow Integration** - Automatic search engine notification for content updates
+- **Dynamic Sitemap** - Auto-generated XML sitemap with proper priorities
+- **Structured Data** - Schema markup for better search visibility
+- **Meta Optimization** - Comprehensive meta tags and Open Graph data
+- **Search Engine Submission** - Automated submission to Bing, Yandex, Seznam, and Naver
+
+### IndexNow Management
+
+Access the IndexNow management panel at `/admin/indexnow` to:
+- Submit individual pages or bulk URLs
+- Monitor submission statistics
+- Configure indexing settings
+- View search engine response status
+
+### Environment Variables
+
+```bash
+# Required for IndexNow functionality
+INDEXNOW_KEY=your-32-character-key
+NEXT_PUBLIC_SITE_URL=https://your-domain.com
+```
+
 ## 🤝 Contributing
 
 We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
@@ -130,6 +158,14 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 📰 Related Articles
+
+Discover more about 3D logo creation and AI tools:
+
+- **[3D Logo Maker - AI Tools Directory](https://toolai.io/en/ai/3d-logo-maker)** - Featured in ToolAI.io's comprehensive AI tools directory
+- **[Good AI Tools - 3D Design Category](https://goodaitools.com/)** - Explore the best AI tools for productivity and creativity
+- **[Free 3D Logo Creator Reviews](https://goodaitools.com/)** - User reviews and comparisons of top 3D design tools
 
 ## 💝 Sponsors
 
