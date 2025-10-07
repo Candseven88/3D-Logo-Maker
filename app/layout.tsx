@@ -105,6 +105,17 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="canonical" href="https://3dlogo.site/" />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#6366f1" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="3D Designer" />
+        <link rel="apple-touch-icon" href="/logo_light.svg" />
+        <script 
+          async 
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9816094922761343"
+          crossOrigin="anonymous"
+        />
       </head>
       <body className={cn(instrumentSans.className, instrumentSerif.variable)}>
         <ThemeProvider

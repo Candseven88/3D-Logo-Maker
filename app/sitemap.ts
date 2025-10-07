@@ -24,6 +24,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly' as const,
       priority: 0.9,
     },
+    {
+      url: `${baseUrl}/preview`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    },
   ]
   
   // Feature and content pages
@@ -38,17 +44,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/gallery`,
       lastModified: currentDate,
       changeFrequency: 'weekly' as const,
-      priority: 0.7,
+      priority: 0.8,
     },
     {
       url: `${baseUrl}/tutorials`,
       lastModified: currentDate,
       changeFrequency: 'weekly' as const,
-      priority: 0.6,
+      priority: 0.7,
     },
   ]
   
-  // Information pages
+  // Information and company pages
   const infoPages = [
     {
       url: `${baseUrl}/about`,
@@ -60,23 +66,55 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/contact`,
       lastModified: currentDate,
       changeFrequency: 'monthly' as const,
-      priority: 0.5,
+      priority: 0.6,
     },
   ]
   
-  // Legal pages
+  // Legal and policy pages
   const legalPages = [
     {
       url: `${baseUrl}/terms`,
       lastModified: currentDate,
       changeFrequency: 'yearly' as const,
-      priority: 0.3,
+      priority: 0.4,
     },
     {
       url: `${baseUrl}/privacy`,
       lastModified: currentDate,
       changeFrequency: 'yearly' as const,
-      priority: 0.3,
+      priority: 0.4,
+    },
+  ]
+
+  // Tool-specific pages for better SEO
+  const toolPages = [
+    {
+      url: `${baseUrl}/tools/svg-converter`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/tools/logo-generator`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/tools/3d-model-viewer`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    },
+  ]
+
+  // API documentation and resources
+  const resourcePages = [
+    {
+      url: `${baseUrl}/api-docs`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.5,
     },
   ]
   
@@ -86,5 +124,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...contentPages,
     ...infoPages,
     ...legalPages,
+    ...toolPages,
+    ...resourcePages,
   ]
 } 

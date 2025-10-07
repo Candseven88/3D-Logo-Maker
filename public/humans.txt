@@ -1,0 +1,22 @@
+/* TEAM */
+Developer: 3D Designer Team
+Contact: contact [at] 3dlogo.site
+Twitter: @3ddesigner
+From: Global
+
+/* THANKS */
+Next.js: https://nextjs.org/
+Three.js: https://threejs.org/
+React Three Fiber: https://docs.pmnd.rs/react-three-fiber/
+Vercel: https://vercel.com/
+Open Source Community
+
+/* SITE */
+Last update: 2025/01/07
+Language: English / 中文
+Doctype: HTML5
+IDE: VS Code, Cursor
+Technologies: Next.js 15, TypeScript, Three.js, React Three Fiber, Tailwind CSS
+Standards: HTML5, CSS3, ES2022
+Components: shadcn/ui, Radix UI
+Software: Node.js, npm, Git

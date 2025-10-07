@@ -1,0 +1,77 @@
+{
+  "name": "3D Designer - Free Online 3D Logo Maker",
+  "short_name": "3D Designer",
+  "description": "Transform your 2D designs into stunning 3D models instantly. Professional 3D logo creation, completely free and running entirely in your browser.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#6366f1",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "categories": ["design", "graphics", "productivity", "utilities"],
+  "screenshots": [
+    {
+      "src": "/opengraph-image-v1.png",
+      "sizes": "1200x675",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "3D Designer Homepage"
+    }
+  ],
+  "icons": [
+    {
+      "src": "/logo_light.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo_dark.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Create 3D Logo",
+      "short_name": "Create",
+      "description": "Start creating a 3D logo from SVG",
+      "url": "/edit",
+      "icons": [
+        {
+          "src": "/logo_light.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Convert Image",
+      "short_name": "Convert",
+      "description": "Convert image to SVG first",
+      "url": "/convert",
+      "icons": [
+        {
+          "src": "/logo_light.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Gallery",
+      "short_name": "Gallery",
+      "description": "View 3D logo examples",
+      "url": "/gallery",
+      "icons": [
+        {
+          "src": "/logo_light.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+Contact: https://3dlogo.site/contact
+Contact: mailto:security@3dlogo.site
+Expires: 2025-12-31T23:59:59.000Z
+Encryption: https://3dlogo.site/pgp-key.txt
+Acknowledgments: https://3dlogo.site/security-acknowledgments
+Preferred-Languages: en, zh
+Canonical: https://3dlogo.site/.well-known/security.txt
+Policy: https://3dlogo.site/security-policy

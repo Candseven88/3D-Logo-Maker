@@ -3,9 +3,9 @@ import { getIndexNowConfig } from '@/lib/indexnow';
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { key: string } }
+  { params }: { params: Promise<{ key: string }> }
 ) {
-  const { key: requestedKey } = params;
+  const { key: requestedKey } = await params;
   const config = getIndexNowConfig();
   
   // Check if the requested key matches our IndexNow key and ends with .txt
