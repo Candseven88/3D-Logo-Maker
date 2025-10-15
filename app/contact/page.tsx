@@ -242,6 +242,13 @@ export default function ContactPage() {
                     <p className="text-sm text-muted-foreground">1-2 business days</p>
                   </div>
                 </div>
+                <div className="flex items-center gap-3">
+                  <MapPin className="h-5 w-5 text-primary" />
+                  <div>
+                    <p className="font-medium">3D Designer LLC</p>
+                    <p className="text-sm text-muted-foreground">San Francisco, CA, USA</p>
+                  </div>
+                </div>
               </div>
             </CardContent>
           </Card>
@@ -263,10 +270,17 @@ export default function ContactPage() {
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
+                  <Mail className="h-5 w-5 text-primary" />
+                  <div>
+                    <p className="font-medium">privacy@3ddesigner.com</p>
+                    <p className="text-sm text-muted-foreground">Data protection inquiries</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
                   <MapPin className="h-5 w-5 text-primary" />
                   <div>
-                    <p className="font-medium">Global Service</p>
-                    <p className="text-sm text-muted-foreground">Available worldwide</p>
+                    <p className="font-medium">Registered Address</p>
+                    <p className="text-sm text-muted-foreground">123 Design Street, San Francisco, CA 94102</p>
                   </div>
                 </div>
               </div>

@@ -147,6 +147,20 @@ export default function PrivacyPage() {
             <CardContent className="prose prose-gray max-w-none">
               <p>3D Designer may use the following third-party services:</p>
               
+              <h4>Google AdSense</h4>
+              <p>
+                We use Google AdSense to display advertisements on our website. Google AdSense may use cookies 
+                and web beacons to serve ads based on your prior visits to our website or other websites. 
+                Google's use of advertising cookies enables it and its partners to serve ads to you based on 
+                your visit to our sites and/or other sites on the Internet.
+              </p>
+              <p>
+                You may opt out of personalized advertising by visiting Google's 
+                <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline"> Ads Settings</a>. 
+                Alternatively, you can opt out of third-party vendor's use of cookies for personalized advertising by visiting 
+                <a href="http://www.aboutads.info/choices/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline"> www.aboutads.info</a>.
+              </p>
+              
               <h4>Vercel Analytics</h4>
               <p>
                 We use Vercel Analytics for anonymous usage statistics. This service does not 
@@ -168,15 +182,23 @@ export default function PrivacyPage() {
             <CardContent className="prose prose-gray max-w-none">
               <p>3D Designer uses minimal browser storage:</p>
               
+              <h4>Advertising Cookies</h4>
+              <p>
+                Google AdSense may use cookies to serve personalized advertisements. These cookies help 
+                Google and its partners serve ads that are more relevant to you based on your browsing history. 
+                You can control these cookies through your browser settings or Google's Ad Settings.
+              </p>
+              
               <h4>Local Storage</h4>
               <p>
                 We may store user preferences (such as theme settings) locally in your browser. 
                 This data never leaves your device.
               </p>
               
-              <h4>No Tracking Cookies</h4>
+              <h4>Essential Cookies</h4>
               <p>
-                We do not use tracking cookies or any form of cross-site tracking.
+                We may use essential cookies necessary for the website to function properly. 
+                These cookies do not track personal information.
               </p>
             </CardContent>
           </Card>

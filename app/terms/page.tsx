@@ -125,13 +125,20 @@ export default function TermsPage() {
 
           <Card>
             <CardHeader>
-              <CardTitle>8. Free Service</CardTitle>
+              <CardTitle>8. Free Service and Advertising</CardTitle>
             </CardHeader>
             <CardContent className="prose prose-gray max-w-none">
               <p>
-                3D Designer is provided free of charge. We reserve the right to introduce paid features 
-                in the future, but core functionality will remain free. Users will be notified of any 
-                changes to the service structure.
+                3D Designer is provided free of charge and is supported by advertising revenue. 
+                By using our service, you agree to the display of advertisements on the platform.
+              </p>
+              <p>
+                We use Google AdSense and other advertising partners to display relevant advertisements. 
+                These advertisements help us maintain the free nature of our service. We reserve the right 
+                to introduce paid features in the future, but core functionality will remain free.
+              </p>
+              <p>
+                Users will be notified of any significant changes to the service structure or advertising policies.
               </p>
             </CardContent>
           </Card>
@@ -148,6 +155,9 @@ export default function TermsPage() {
                 <li>Attempt to reverse engineer or copy the service</li>
                 <li>Use automated tools to access the service excessively</li>
                 <li>Interfere with the security or functionality of the platform</li>
+                <li>Block, disable, or interfere with advertisements displayed on the platform</li>
+                <li>Use ad-blocking software that prevents the display of advertisements</li>
+                <li>Click on advertisements fraudulently or encourage others to do so</li>
               </ul>
             </CardContent>
           </Card>

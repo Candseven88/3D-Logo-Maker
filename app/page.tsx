@@ -11,6 +11,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { motion, AnimatePresence } from "framer-motion";
+import { AdSenseBanner, AdSenseInFeed } from "@/components/google-adsense";
 import { 
   ArrowRight, 
   Loader2, 
@@ -712,6 +713,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Advertisement */}
+      <AdSenseInFeed className="my-16" />
+
       {/* CTA Section */}
       <section className="py-24 bg-primary/5">
         <div className="container mx-auto px-4">
@@ -744,6 +748,9 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+      {/* Bottom Advertisement */}
+      <AdSenseBanner className="mb-8" />
     </div>
   );
 }

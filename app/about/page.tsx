@@ -103,16 +103,23 @@ export default function AboutPage() {
           </CardHeader>
           <CardContent className="prose prose-lg max-w-none">
             <p className="text-muted-foreground leading-relaxed mb-6">
-              It all started with a simple problem: creating 3D logos was too complicated and expensive. 
-              Traditional 3D software required extensive learning curves, expensive licenses, and powerful hardware.
+              Founded in 2023, 3D Designer emerged from a simple observation: creating 3D logos was too complicated and expensive. 
+              Traditional 3D software required extensive learning curves, expensive licenses, and powerful hardware that many 
+              small businesses and individual creators couldn't afford.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              We decided to change that. Using cutting-edge web technologies like Three.js and WebGL, 
-              we built a platform that brings professional 3D design capabilities directly to your browser.
+              Our team of experienced web developers and 3D graphics specialists decided to change that. Using cutting-edge 
+              web technologies like Three.js and WebGL, we built a platform that brings professional 3D design capabilities 
+              directly to your browser, making it accessible to everyone regardless of their technical background or budget.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              Based in San Francisco, California, our mission is to democratize 3D design and empower creators worldwide. 
+              We believe that great design tools should be accessible to everyone, not just large corporations with big budgets.
             </p>
             <p className="text-muted-foreground leading-relaxed">
               Today, 3D Designer serves thousands of designers, entrepreneurs, and businesses worldwide, 
-              helping them create stunning 3D logos without any technical expertise or upfront costs.
+              helping them create stunning 3D logos without any technical expertise or upfront costs. Our platform 
+              has been featured in design publications and continues to grow as more creators discover the power of accessible 3D design.
             </p>
           </CardContent>
         </Card>
@@ -138,6 +145,47 @@ export default function AboutPage() {
             </Card>
           ))}
         </div>
+      </div>
+
+      {/* Team Section */}
+      <div className="mb-16">
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-3xl mb-4">Our Team</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              3D Designer is built by a passionate team of developers, designers, and 3D graphics specialists 
+              who share a common vision: making professional design tools accessible to everyone.
+            </p>
+            <div className="grid md:grid-cols-3 gap-6 mb-6">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full mx-auto mb-3 flex items-center justify-center">
+                  <span className="text-white text-xl font-bold">👨‍💻</span>
+                </div>
+                <h4 className="font-semibold mb-1">Engineering Team</h4>
+                <p className="text-sm text-muted-foreground">Full-stack developers with expertise in 3D graphics and web technologies</p>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-teal-500 rounded-full mx-auto mb-3 flex items-center justify-center">
+                  <span className="text-white text-xl font-bold">🎨</span>
+                </div>
+                <h4 className="font-semibold mb-1">Design Team</h4>
+                <p className="text-sm text-muted-foreground">UX/UI designers focused on creating intuitive and beautiful interfaces</p>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-full mx-auto mb-3 flex items-center justify-center">
+                  <span className="text-white text-xl font-bold">🚀</span>
+                </div>
+                <h4 className="font-semibold mb-1">Product Team</h4>
+                <p className="text-sm text-muted-foreground">Product managers and strategists driving innovation and user experience</p>
+              </div>
+            </div>
+            <p className="text-muted-foreground text-center">
+              We're a remote-first company with team members across the globe, united by our passion for democratizing design.
+            </p>
+          </CardContent>
+        </Card>
       </div>
 
       {/* Technology Section */}
